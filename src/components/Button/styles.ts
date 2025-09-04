@@ -15,7 +15,6 @@ export const s = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 5,
-        backgroundColor: "#175681",
     },
     botaoText: {
         fontSize: 17,

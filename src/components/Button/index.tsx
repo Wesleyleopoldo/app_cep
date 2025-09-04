@@ -1,14 +1,22 @@
 import { useState } from "react";
 import { Text, View, TouchableOpacity, SafeAreaView, TextInput } from "react-native";
-import { s } from "./styles"
+import { s } from "./styles";
 
-export default function Button() {
-    const [cep, setCep] = useState("");
+type ButtonProps = {
+    onPressClear: () => void;
+    onPressFind: () =>  void;
+}
+
+export default function Button({ onPressClear, onPressFind }: ButtonProps) {
 
     return (
         <View style={s.container}>
-            <TouchableOpacity style={s.botao}>
+            <TouchableOpacity style={[s.botao, { backgroundColor: "#175681" }]} onPress={onPressFind}>
                 <Text style={s.botaoText}>Buscar</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={[s.botao, { backgroundColor: "#ff0000" }]} onPress={onPressClear}>
+                <Text style={s.botaoText}>Limpar</Text>
             </TouchableOpacity>
         </View>
     )

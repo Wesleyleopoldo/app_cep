@@ -1,10 +1,24 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Text, View, TouchableOpacity, SafeAreaView, TextInput } from "react-native";
 import { s } from "./styles"
 import Button from "../Button";
 
 export default function Main() {
-    const [cep, setCep] = useState("");
+    const [ cep, setCep ] = useState("");
+    const inputRef = useRef<TextInput>(null);
+
+    function limpar() {
+        setCep("");
+        inputRef.current?.focus();
+    }
+
+    async function buscar() {
+        if(cep == "") {
+            alert("Digite o CEP!!");
+            setCep("");
+            return;
+        }
+    }
 
     return (
         <SafeAreaView style={s.container}>
@@ -22,10 +36,10 @@ export default function Main() {
                     onChangeText={(texto) => setCep(texto)}
                     keyboardAppearance="dark"
                     keyboardType="numeric"
+                    ref={inputRef}
                 />
-            <Button />
+            <Button onPressFind={() => buscar()} onPressClear={() => limpar()}/>
             </View>
-
 
         </SafeAreaView>
     )
