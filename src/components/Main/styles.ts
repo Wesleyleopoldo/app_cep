@@ -3,11 +3,12 @@ import { StyleSheet } from "react-native";
 export const s = StyleSheet.create({
     container: {
         height: "100%",
+        alignItems: "center"
     },
     subContainer: {
-        height: "100%",
+        height: 150,
         display: "flex",
-        paddingBottom: 370,
+        paddingBottom: 37,
     },
 
     textoContainer: {
@@ -31,5 +32,16 @@ export const s = StyleSheet.create({
         borderColor: "#ddd",
         paddingHorizontal: 20,
         fontSize: 25,
-    }
+    },
+
+    dadosContainer: {
+        alignItems: "center",
+        justifyContent: "center",
+        height: 300,
+        width: 300,
+    },
+    dados: {
+        fontSize: 19,
+        color: "#808080"
+    },
 });
