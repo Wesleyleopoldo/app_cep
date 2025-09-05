@@ -39,9 +39,13 @@ export const s = StyleSheet.create({
         justifyContent: "center",
         height: 300,
         width: 300,
+        backgroundColor: "#ddd",
+        borderRadius: 15,
+        borderWidth: 1,
+        borderColor: "#A9A9A9"
     },
     dados: {
         fontSize: 19,
-        color: "#808080"
+        color: "#666666"
     },
 });

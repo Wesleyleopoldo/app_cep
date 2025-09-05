@@ -24,7 +24,6 @@ export default function Main() {
 
         try {
             const response = await api.get(`/ws/${cep}/json/`);
-            console.log(response.data);
             setCep("");
             setCepUser(response.data);
             Keyboard.dismiss();
