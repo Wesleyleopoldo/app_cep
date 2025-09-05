@@ -7,10 +7,11 @@ export const s = StyleSheet.create({
         marginTop: 5,
         justifyContent: "space-around",
         paddingTop: 20,
-        paddingBottom: 20
+        paddingBottom: 20,
+        gap: 45
     }, 
     botao: {
-        width: "20%",
+        width: "25%",
         height: 40,
         justifyContent: "center",
         alignItems: "center",
