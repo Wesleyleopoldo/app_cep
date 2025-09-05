@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Text, View, TouchableOpacity, SafeAreaView, TextInput } from "react-native";
 import { s } from "./styles"
 import Button from "../Button";
+import api from "../../services/api.ts";
 
 export default function Main() {
     const [ cep, setCep ] = useState("");
@@ -17,6 +18,13 @@ export default function Main() {
             alert("Digite o CEP!!");
             setCep("");
             return;
+        }
+
+        try {
+            const response = await api.get(`/ws/${cep}/json/`);
+            console.log(response.data);
+        } catch(error) {
+            console.error(error);
         }
     }
 
